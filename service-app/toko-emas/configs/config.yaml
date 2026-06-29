@@ -1,0 +1,16 @@
+server:
+  http:
+    addr: 0.0.0.0:8000
+    timeout: 1s
+
+data:
+  database:
+    driver: postgres
+    dsn: "host=localhost user=postgres password=Tambunan140705 dbname=jason_jewelry port=5432 sslmode=disable TimeZone=Asia/Jakarta"
+
+log:
+  level: info
+
+auth:
+  jwt_secret: "change-this-secret"
+  access_token_ttl: "6h"
