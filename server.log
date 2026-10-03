@@ -1,0 +1,80 @@
+🚀  Toko Emas API    → http://0.0.0.0:8001
+📖  Swagger UI       → http://0.0.0.0:8001/docs/index.html
+
+2026/08/12 11:41:53 [32mD:/CV Devora/Jason Jewelry/jason_be/toko-emas/internal/data/other_repos.go:125
+[0m[33m[42.582ms] [34;1m[rows:1][0m INSERT INTO "penjualan" ("id","no_faktur","nama","total_harga","kode_sales","harga_gram","harga_jual","ongkos","cash","transfer","debet","created_at","updated_at","deleted_at") VALUES ('c232717f-39e5-4f58-8c6e-5155a349aa36','SELL-2026-002','Joi Napitupulu',4040000,1,1739130,4000000,40000,0,4040000,0,'2026-08-12 11:41:53.547','2026-08-12 11:41:53.547',NULL)
+
+2026/08/12 11:41:53 [32mD:/CV Devora/Jason Jewelry/jason_be/toko-emas/internal/data/other_repos.go:131
+[0m[33m[28.228ms] [34;1m[rows:1][0m UPDATE "barang" SET "penjualan_id"='c232717f-39e5-4f58-8c6e-5155a349aa36',"updated_at"='2026-08-12 11:41:53.586' WHERE id IN ('420d11ab-e616-4bb6-adba-511ad90be8ec')
+
+2026/08/12 11:41:55 [32mD:/CV Devora/Jason Jewelry/jason_be/toko-emas/internal/data/other_repos.go:99
+[0m[33m[6.987ms] [34;1m[rows:1][0m SELECT * FROM "barang" WHERE "barang"."penjualan_id" IN ('74f50f31-b66e-4a9a-882a-f902650aac5b','c232717f-39e5-4f58-8c6e-5155a349aa36')
+
+2026/08/12 11:41:55 [32mD:/CV Devora/Jason Jewelry/jason_be/toko-emas/internal/data/other_repos.go:99
+[0m[33m[12.055ms] [34;1m[rows:2][0m SELECT * FROM "penjualan" WHERE deleted_at IS NULL
+
+2026/08/12 11:41:55 [34;1mD:/CV Devora/Jason Jewelry/jason_be/toko-emas/internal/data/user_repo.go:20
+[0m[35m[warn] [0mModel toko-emas/internal/data.User don't match BeforeCreateInterface, should be `BeforeCreate(*gorm.DB) error`. Please see https://gorm.io/docs/hooks.html
+
+2026/08/12 11:41:55 [32mD:/CV Devora/Jason Jewelry/jason_be/toko-emas/internal/data/user_repo.go:20
+[0m[33m[13.854ms] [34;1m[rows:5][0m SELECT * FROM "users" WHERE deleted_at IS NULL
+
+2026/08/12 11:41:55 [32mD:/CV Devora/Jason Jewelry/jason_be/toko-emas/internal/data/user_repo.go:20
+[0m[33m[0.611ms] [34;1m[rows:5][0m SELECT * FROM "users" WHERE deleted_at IS NULL
+
+2026/08/12 11:41:55 [32mD:/CV Devora/Jason Jewelry/jason_be/toko-emas/internal/data/other_repos.go:99
+[0m[33m[17.088ms] [34;1m[rows:1][0m SELECT * FROM "barang" WHERE "barang"."penjualan_id" IN ('74f50f31-b66e-4a9a-882a-f902650aac5b','c232717f-39e5-4f58-8c6e-5155a349aa36')
+
+2026/08/12 11:41:55 [32mD:/CV Devora/Jason Jewelry/jason_be/toko-emas/internal/data/other_repos.go:99
+[0m[33m[154.754ms] [34;1m[rows:2][0m SELECT * FROM "penjualan" WHERE deleted_at IS NULL
+
+2026/08/12 11:42:50 [32mD:/CV Devora/Jason Jewelry/jason_be/toko-emas/internal/data/user_repo.go:20
+[0m[33m[4.995ms] [34;1m[rows:5][0m SELECT * FROM "users" WHERE deleted_at IS NULL
+
+2026/08/12 11:42:50 [32mD:/CV Devora/Jason Jewelry/jason_be/toko-emas/internal/data/other_repos.go:99
+[0m[33m[1.078ms] [34;1m[rows:1][0m SELECT * FROM "barang" WHERE "barang"."penjualan_id" IN ('74f50f31-b66e-4a9a-882a-f902650aac5b','c232717f-39e5-4f58-8c6e-5155a349aa36')
+
+2026/08/12 11:42:50 [32mD:/CV Devora/Jason Jewelry/jason_be/toko-emas/internal/data/other_repos.go:99
+[0m[33m[6.687ms] [34;1m[rows:2][0m SELECT * FROM "penjualan" WHERE deleted_at IS NULL
+
+2026/08/12 11:42:53 [32mD:/CV Devora/Jason Jewelry/jason_be/toko-emas/internal/data/barang_repo.go:20
+[0m[33m[10.636ms] [34;1m[rows:2][0m SELECT * FROM "baki" WHERE "baki"."id" IN ('c9c0e75b-bfeb-4d8f-a114-58daabadee4e','06be3cea-0595-420a-8b36-87d58cde0629')
+
+2026/08/12 11:42:53 [32mD:/CV Devora/Jason Jewelry/jason_be/toko-emas/internal/data/barang_repo.go:20
+[0m[33m[9.061ms] [34;1m[rows:6][0m SELECT * FROM "karat" WHERE "karat"."id" IN ('a214f6df-7610-4524-adce-0f841d3f3364','5cdcf2dc-9144-4f9b-ad33-ac2b50ef2d00','7af67f72-f388-4744-8cc3-60a410b69982','4430f63f-498b-4d4a-9b5a-8cd779ca9a4f','7db1c958-cfae-4b47-8dc9-e72aa41922ac','0abe2772-6f60-48e2-a6d6-66bbdb6b3d73')
+
+2026/08/12 11:42:53 [32mD:/CV Devora/Jason Jewelry/jason_be/toko-emas/internal/data/barang_repo.go:20
+[0m[33m[32.087ms] [34;1m[rows:14][0m SELECT * FROM "barang" WHERE deleted_at IS NULL
+
+2026/08/12 11:42:53 [32mD:/CV Devora/Jason Jewelry/jason_be/toko-emas/internal/data/barang_repo.go:20
+[0m[33m[2.019ms] [34;1m[rows:2][0m SELECT * FROM "baki" WHERE "baki"."id" IN ('c9c0e75b-bfeb-4d8f-a114-58daabadee4e','06be3cea-0595-420a-8b36-87d58cde0629')
+
+2026/08/12 11:42:53 [32mD:/CV Devora/Jason Jewelry/jason_be/toko-emas/internal/data/barang_repo.go:20
+[0m[33m[1.605ms] [34;1m[rows:6][0m SELECT * FROM "karat" WHERE "karat"."id" IN ('a214f6df-7610-4524-adce-0f841d3f3364','5cdcf2dc-9144-4f9b-ad33-ac2b50ef2d00','7af67f72-f388-4744-8cc3-60a410b69982','4430f63f-498b-4d4a-9b5a-8cd779ca9a4f','7db1c958-cfae-4b47-8dc9-e72aa41922ac','0abe2772-6f60-48e2-a6d6-66bbdb6b3d73')
+
+2026/08/12 11:42:53 [32mD:/CV Devora/Jason Jewelry/jason_be/toko-emas/internal/data/barang_repo.go:20
+[0m[33m[10.364ms] [34;1m[rows:14][0m SELECT * FROM "barang" WHERE deleted_at IS NULL
+
+2026/08/12 11:44:44 [32mD:/CV Devora/Jason Jewelry/jason_be/toko-emas/internal/data/other_repos.go:125
+[0m[33m[3.614ms] [34;1m[rows:1][0m INSERT INTO "penjualan" ("id","no_faktur","nama","total_harga","kode_sales","harga_gram","harga_jual","ongkos","cash","transfer","debet","created_at","updated_at","deleted_at") VALUES ('a0e8c657-39f2-477d-8eae-4754e4f7762c','SELL-2026-003','Bryan Siagian',4040000,1,326531,4000000,40000,0,4040000,0,'2026-08-12 11:44:44.531','2026-08-12 11:44:44.531',NULL)
+
+2026/08/12 11:44:44 [32mD:/CV Devora/Jason Jewelry/jason_be/toko-emas/internal/data/other_repos.go:131
+[0m[33m[4.188ms] [34;1m[rows:1][0m UPDATE "barang" SET "penjualan_id"='a0e8c657-39f2-477d-8eae-4754e4f7762c',"updated_at"='2026-08-12 11:44:44.536' WHERE id IN ('be9b914a-da1f-4f8d-9eb6-828110cb6c16')
+
+2026/08/12 11:44:44 [32mD:/CV Devora/Jason Jewelry/jason_be/toko-emas/internal/data/other_repos.go:99
+[0m[33m[1.088ms] [34;1m[rows:2][0m SELECT * FROM "barang" WHERE "barang"."penjualan_id" IN ('74f50f31-b66e-4a9a-882a-f902650aac5b','c232717f-39e5-4f58-8c6e-5155a349aa36','a0e8c657-39f2-477d-8eae-4754e4f7762c')
+
+2026/08/12 11:44:44 [32mD:/CV Devora/Jason Jewelry/jason_be/toko-emas/internal/data/other_repos.go:99
+[0m[33m[7.698ms] [34;1m[rows:3][0m SELECT * FROM "penjualan" WHERE deleted_at IS NULL
+
+2026/08/12 11:44:44 [32mD:/CV Devora/Jason Jewelry/jason_be/toko-emas/internal/data/other_repos.go:99
+[0m[33m[1.820ms] [34;1m[rows:2][0m SELECT * FROM "barang" WHERE "barang"."penjualan_id" IN ('74f50f31-b66e-4a9a-882a-f902650aac5b','c232717f-39e5-4f58-8c6e-5155a349aa36','a0e8c657-39f2-477d-8eae-4754e4f7762c')
+
+2026/08/12 11:44:44 [32mD:/CV Devora/Jason Jewelry/jason_be/toko-emas/internal/data/other_repos.go:99
+[0m[33m[3.198ms] [34;1m[rows:3][0m SELECT * FROM "penjualan" WHERE deleted_at IS NULL
+
+2026/08/12 11:44:44 [32mD:/CV Devora/Jason Jewelry/jason_be/toko-emas/internal/data/user_repo.go:20
+[0m[33m[7.789ms] [34;1m[rows:5][0m SELECT * FROM "users" WHERE deleted_at IS NULL
+
+2026/08/12 11:44:44 [32mD:/CV Devora/Jason Jewelry/jason_be/toko-emas/internal/data/user_repo.go:20
+[0m[33m[0.000ms] [34;1m[rows:5][0m SELECT * FROM "users" WHERE deleted_at IS NULL
