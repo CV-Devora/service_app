@@ -17,13 +17,11 @@ import (
 	"toko-emas/internal/data"
 	"toko-emas/internal/server"
 	"toko-emas/internal/service"
-
-	"gopkg.in/yaml.v3"
 )
 
 // Run bootstraps and starts the application.
 func Run(confDir string) {
-	cfg, err := loadConfig(confDir + "/config.yaml")
+	cfg, err := conf.Load(confDir)
 	if err != nil {
 		log.Fatalf("failed to load config: %v", err)
 	}
@@ -93,16 +91,4 @@ func Run(confDir string) {
 		log.Printf("server shutdown error: %v", err)
 	}
 	log.Println("server stopped.")
-}
-
-func loadConfig(path string) (*conf.Config, error) {
-	f, err := os.ReadFile(path)
-	if err != nil {
-		return nil, fmt.Errorf("read config: %w", err)
-	}
-	var cfg conf.Config
-	if err := yaml.Unmarshal(f, &cfg); err != nil {
-		return nil, fmt.Errorf("parse config: %w", err)
-	}
-	return &cfg, nil
 }

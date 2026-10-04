@@ -11,9 +11,8 @@ import (
 	"strings"
 
 	"toko-emas/internal/conf"
+	"toko-emas/internal/data"
 
-	"gopkg.in/yaml.v3"
-	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
 
@@ -32,10 +31,12 @@ func main() {
 	cmd := flag.String("cmd", "up", "migration command: up, down, status, reset")
 	flag.Parse()
 
-	cfg := loadConfig(*confDir + "/config.yaml")
+	cfg, err := conf.Load(*confDir)
+	if err != nil {
+		log.Fatalf("failed to load config: %v", err)
+	}
 
-	dsn := cfg.Data.Database.DSN
-	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
+	db, err := data.NewDB(cfg)
 	if err != nil {
 		log.Fatalf("failed to connect database: %v", err)
 	}
@@ -54,18 +55,6 @@ func main() {
 	default:
 		log.Fatalf("unknown command: %s", *cmd)
 	}
-}
-
-func loadConfig(path string) *conf.Config {
-	f, err := os.ReadFile(path)
-	if err != nil {
-		log.Fatalf("read config: %v", err)
-	}
-	var cfg conf.Config
-	if err := yaml.Unmarshal(f, &cfg); err != nil {
-		log.Fatalf("parse config: %v", err)
-	}
-	return &cfg
 }
 
 func loadMigrations() []Migration {
