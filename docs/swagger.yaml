@@ -1,0 +1,1229 @@
+basePath: /api/v1
+definitions:
+  v1.AttachBarangToPenjualanRequest:
+    properties:
+      barang_ids:
+        example:
+        - 550e8400-e29b-41d4-a716-446655440000
+        items:
+          type: string
+        type: array
+    type: object
+  v1.CreateBakiRequest:
+    properties:
+      nama:
+        example: Baki 1
+        type: string
+    type: object
+  v1.CreateBarangLandingRequest:
+    properties:
+      berat:
+        example: 5.5
+        type: number
+      harga:
+        example: 5000000
+        type: integer
+      karat:
+        example: "24"
+        type: string
+      nama:
+        example: Cincin Emas
+        type: string
+      photo:
+        example: https://example.com/photo.jpg
+        type: string
+    type: object
+  v1.CreateBarangRequest:
+    properties:
+      baki_id:
+        example: "null"
+        type: string
+      barcode:
+        example: BC001
+        type: string
+      berat:
+        example: 5.5
+        type: number
+      berat_atribut:
+        example: 0.5
+        type: number
+      grup:
+        example: "null"
+        type: string
+      harga:
+        example: 5000000
+        type: integer
+      karat_id:
+        example: 0839294b-3a65-4e27-904e-63f5c49e7fd3
+        type: string
+      kondisi:
+        example: baru
+        type: string
+      nama:
+        example: Gelang Emas
+        type: string
+      pembelian_id:
+        example: "null"
+        type: string
+      photo:
+        example: https://example.com/photo.jpg
+        type: string
+    type: object
+  v1.CreateKaratRequest:
+    properties:
+      harga:
+        example: 1000000
+        type: integer
+      name:
+        example: 24K
+        type: string
+    type: object
+  v1.CreatePembelianItem:
+    properties:
+      baki_id:
+        example: "null"
+        type: string
+      barcode:
+        example: BRG001
+        type: string
+      berat:
+        example: 5.5
+        type: number
+      harga:
+        example: 5000000
+        type: integer
+      karat_id:
+        example: 0839294b-3a65-4e27-904e-63f5c49e7fd3
+        type: string
+      kondisi:
+        example: baru
+        type: string
+      nama:
+        example: Gelang Emas
+        type: string
+      photo:
+        example: https://example.com/photo.jpg
+        type: string
+    type: object
+  v1.CreatePembelianRequest:
+    properties:
+      barang:
+        items:
+          $ref: '#/definitions/v1.CreatePembelianItem'
+        type: array
+      berat_nota:
+        example: 25.5
+        type: number
+      harga_deal:
+        example: 10000000
+        type: integer
+      harga_nota:
+        example: 12000000
+        type: integer
+      harga_rata:
+        example: 470588
+        type: integer
+      jumlah_pembayaran:
+        example: 12000000
+        type: integer
+      nama:
+        example: Toko Mas Jaya
+        type: string
+      no_faktur:
+        example: INV-2024-001
+        type: string
+      tipe_pemasok:
+        example: supplier
+        type: string
+      tipe_pembayaran:
+        example: cash
+        type: string
+    type: object
+  v1.CreatePenjualanRequest:
+    properties:
+      barang_ids:
+        example:
+        - 550e8400-e29b-41d4-a716-446655440000
+        items:
+          type: string
+        type: array
+      cash:
+        example: 2000000
+        type: integer
+      debet:
+        example: 600000
+        type: integer
+      harga_gram:
+        example: 750000
+        type: integer
+      harga_jual:
+        example: 4500000
+        type: integer
+      kode_sales:
+        example: 1
+        type: integer
+      nama:
+        example: Pelanggan A
+        type: string
+      no_faktur:
+        example: SELL-2024-001
+        type: string
+      ongkos:
+        example: 100000
+        type: integer
+      total_harga:
+        example: 5000000
+        type: integer
+      transfer:
+        example: 2000000
+        type: integer
+    type: object
+  v1.CreateUserRequest:
+    properties:
+      kode_sales:
+        example: 1
+        type: integer
+      nama:
+        example: Budi Santoso
+        type: string
+      password:
+        example: secret123
+        type: string
+      role:
+        example: kasir
+        type: string
+      username:
+        example: budi
+        type: string
+    type: object
+  v1.ImportBarangError:
+    properties:
+      barcode:
+        type: string
+      message:
+        type: string
+      row:
+        type: integer
+    type: object
+  v1.ImportBarangResult:
+    properties:
+      errors:
+        items:
+          $ref: '#/definitions/v1.ImportBarangError'
+        type: array
+      imported:
+        type: integer
+      skipped:
+        type: integer
+      total:
+        type: integer
+    type: object
+  v1.Response:
+    properties:
+      code:
+        type: integer
+      data: {}
+      message:
+        type: string
+    type: object
+  v1.UpdateBakiRequest:
+    properties:
+      nama:
+        example: Baki 1
+        type: string
+    type: object
+  v1.UpdateBarangLandingRequest:
+    properties:
+      berat:
+        example: 5.5
+        type: number
+      harga:
+        example: 5000000
+        type: integer
+      karat:
+        example: "24"
+        type: string
+      nama:
+        example: Cincin Emas
+        type: string
+      photo:
+        example: https://example.com/photo.jpg
+        type: string
+    type: object
+  v1.UpdateBarangRequest:
+    properties:
+      baki_id:
+        type: string
+      barcode:
+        example: BC001
+        type: string
+      berat:
+        example: 5.5
+        type: number
+      berat_atribut:
+        example: 0.5
+        type: number
+      grup:
+        type: string
+      harga:
+        example: 5000000
+        type: integer
+      karat_id:
+        example: 0839294b-3a65-4e27-904e-63f5c49e7fd3
+        type: string
+      kondisi:
+        example: baru
+        type: string
+      nama:
+        example: Gelang Emas
+        type: string
+      pembelian_id:
+        type: string
+      photo:
+        example: https://example.com/photo.jpg
+        type: string
+    type: object
+  v1.UpdateKaratRequest:
+    properties:
+      harga:
+        example: 1000000
+        type: integer
+      name:
+        example: 24K
+        type: string
+    type: object
+  v1.UpdatePembelianRequest:
+    properties:
+      berat_nota:
+        example: 25.5
+        type: number
+      harga_deal:
+        example: 10000000
+        type: integer
+      harga_nota:
+        example: 12000000
+        type: integer
+      harga_rata:
+        example: 470588
+        type: integer
+      jumlah_pembayaran:
+        example: 12000000
+        type: integer
+      nama:
+        example: Toko Mas Jaya
+        type: string
+      no_faktur:
+        example: INV-2024-001
+        type: string
+      tipe_pemasok:
+        example: supplier
+        type: string
+      tipe_pembayaran:
+        example: cash
+        type: string
+    type: object
+  v1.UpdatePenjualanRequest:
+    properties:
+      cash:
+        example: 2000000
+        type: integer
+      debet:
+        example: 600000
+        type: integer
+      harga_gram:
+        example: 750000
+        type: integer
+      harga_jual:
+        example: 4500000
+        type: integer
+      kode_sales:
+        example: 1
+        type: integer
+      nama:
+        example: Pelanggan A
+        type: string
+      no_faktur:
+        example: SELL-2024-001
+        type: string
+      ongkos:
+        example: 100000
+        type: integer
+      total_harga:
+        example: 5000000
+        type: integer
+      transfer:
+        example: 2000000
+        type: integer
+    type: object
+  v1.UpdateUserRequest:
+    properties:
+      kode_sales:
+        example: 1
+        type: integer
+      nama:
+        example: Budi Santoso
+        type: string
+      role:
+        example: kasir
+        type: string
+      username:
+        example: budi
+        type: string
+    type: object
+host: localhost:8000
+info:
+  contact: {}
+  description: API sistem manajemen toko emas dengan PostgreSQL backend.
+  title: Toko Emas API
+  version: "1.0"
+paths:
+  /api/v1/baki:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: List semua baki
+      tags:
+      - Baki
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Data baki
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/v1.CreateBakiRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Tambah baki
+      tags:
+      - Baki
+  /api/v1/baki/{id}:
+    delete:
+      parameters:
+      - description: Baki ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Hapus baki
+      tags:
+      - Baki
+    get:
+      parameters:
+      - description: Baki ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Get baki by ID
+      tags:
+      - Baki
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: Baki ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Data baki
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/v1.UpdateBakiRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Update baki
+      tags:
+      - Baki
+  /api/v1/barang:
+    get:
+      consumes:
+      - application/json
+      description: Mendapatkan semua data barang
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: List semua barang
+      tags:
+      - Barang
+    post:
+      consumes:
+      - application/json
+      description: Menambahkan barang baru
+      parameters:
+      - description: Data barang
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/v1.CreateBarangRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/v1.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Tambah barang
+      tags:
+      - Barang
+  /api/v1/barang-landing:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: List semua barang landing page
+      tags:
+      - Barang Landing
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Data barang landing
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/v1.CreateBarangLandingRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Tambah barang landing
+      tags:
+      - Barang Landing
+  /api/v1/barang-landing/{id}:
+    delete:
+      parameters:
+      - description: Barang Landing ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Hapus barang landing
+      tags:
+      - Barang Landing
+    get:
+      parameters:
+      - description: Barang Landing ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Get barang landing by ID
+      tags:
+      - Barang Landing
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: Barang Landing ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Data barang landing
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/v1.UpdateBarangLandingRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Update barang landing
+      tags:
+      - Barang Landing
+  /api/v1/barang/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Menghapus barang (soft delete)
+      parameters:
+      - description: Barang ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Hapus barang
+      tags:
+      - Barang
+    get:
+      consumes:
+      - application/json
+      description: Mendapatkan detail barang berdasarkan ID
+      parameters:
+      - description: Barang ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.Response'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Get barang by ID
+      tags:
+      - Barang
+    put:
+      consumes:
+      - application/json
+      description: Memperbarui data barang berdasarkan ID
+      parameters:
+      - description: Barang ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Data barang
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/v1.UpdateBarangRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Update barang
+      tags:
+      - Barang
+  /api/v1/barang/export:
+    get:
+      description: Mengunduh data barang inventaris (yang belum terjual) sebagai file
+        .xlsx
+      produces:
+      - application/octet-stream
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: file
+      summary: Export barang ke Excel
+      tags:
+      - Barang
+  /api/v1/barang/import:
+    post:
+      consumes:
+      - multipart/form-data
+      description: Import data barang massal dari file .xlsx atau .csv dengan kolom
+        barcode, baki, nama, kadar, berat, harga jual, kondisi. Khusus admin.
+      parameters:
+      - description: File Excel (.xlsx) atau CSV
+        in: formData
+        name: file
+        required: true
+        type: file
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.ImportBarangResult'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/v1.Response'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Import barang dari file Excel/CSV
+      tags:
+      - Barang
+  /api/v1/barang/latest-barcode:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Get latest barcode number
+      tags:
+      - Barang
+  /api/v1/dashboard:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Get dashboard charts data
+      tags:
+      - Dashboard
+  /api/v1/karat:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: List semua karat
+      tags:
+      - Karat
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Data karat
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/v1.CreateKaratRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Tambah karat
+      tags:
+      - Karat
+  /api/v1/karat/{id}:
+    delete:
+      parameters:
+      - description: Karat ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Hapus karat
+      tags:
+      - Karat
+    get:
+      parameters:
+      - description: Karat ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Get karat by ID
+      tags:
+      - Karat
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: Karat ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Data karat
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/v1.UpdateKaratRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Update karat
+      tags:
+      - Karat
+  /api/v1/pembelian:
+    get:
+      parameters:
+      - description: Tanggal awal (YYYY-MM-DD)
+        in: query
+        name: from
+        type: string
+      - description: Tanggal akhir (YYYY-MM-DD)
+        in: query
+        name: to
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: List semua pembelian
+      tags:
+      - Pembelian
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Data pembelian
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/v1.CreatePembelianRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Tambah pembelian
+      tags:
+      - Pembelian
+  /api/v1/pembelian/{id}:
+    delete:
+      parameters:
+      - description: Pembelian ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Hapus pembelian
+      tags:
+      - Pembelian
+    get:
+      parameters:
+      - description: Pembelian ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Get pembelian by ID
+      tags:
+      - Pembelian
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: Pembelian ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Data pembelian
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/v1.UpdatePembelianRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Update pembelian
+      tags:
+      - Pembelian
+  /api/v1/pembelian/{id}/approve:
+    put:
+      parameters:
+      - description: Pembelian ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Approve pembelian
+      tags:
+      - Pembelian
+  /api/v1/pembelian/export:
+    get:
+      description: Mengunduh data pembelian dalam rentang tanggal sebagai file .xlsx
+      parameters:
+      - description: Tanggal awal (YYYY-MM-DD)
+        in: query
+        name: from
+        required: true
+        type: string
+      - description: Tanggal akhir (YYYY-MM-DD)
+        in: query
+        name: to
+        required: true
+        type: string
+      produces:
+      - application/octet-stream
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: file
+      summary: Export pembelian ke Excel
+      tags:
+      - Pembelian
+  /api/v1/penjualan:
+    get:
+      parameters:
+      - description: Tanggal awal (YYYY-MM-DD)
+        in: query
+        name: from
+        type: string
+      - description: Tanggal akhir (YYYY-MM-DD)
+        in: query
+        name: to
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: List semua penjualan
+      tags:
+      - Penjualan
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Data penjualan
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/v1.CreatePenjualanRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Tambah penjualan
+      tags:
+      - Penjualan
+  /api/v1/penjualan/{id}:
+    delete:
+      parameters:
+      - description: Penjualan ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Hapus penjualan
+      tags:
+      - Penjualan
+    get:
+      parameters:
+      - description: Penjualan ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Get penjualan by ID
+      tags:
+      - Penjualan
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: Penjualan ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Data penjualan
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/v1.UpdatePenjualanRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Update penjualan
+      tags:
+      - Penjualan
+  /api/v1/penjualan/{id}/barang:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Penjualan ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Barang IDs
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/v1.AttachBarangToPenjualanRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Tambahkan barang ke penjualan
+      tags:
+      - Penjualan
+  /api/v1/penjualan/export:
+    get:
+      description: Mengunduh data penjualan dalam rentang tanggal sebagai file .xlsx
+      parameters:
+      - description: Tanggal awal (YYYY-MM-DD)
+        in: query
+        name: from
+        required: true
+        type: string
+      - description: Tanggal akhir (YYYY-MM-DD)
+        in: query
+        name: to
+        required: true
+        type: string
+      produces:
+      - application/octet-stream
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: file
+      summary: Export penjualan ke Excel
+      tags:
+      - Penjualan
+  /api/v1/users:
+    get:
+      consumes:
+      - application/json
+      description: Mendapatkan semua data user
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: List semua user
+      tags:
+      - Users
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Data user
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/v1.CreateUserRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Tambah user
+      tags:
+      - Users
+  /api/v1/users/{id}:
+    delete:
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Hapus user
+      tags:
+      - Users
+    get:
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Get user by ID
+      tags:
+      - Users
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Data user
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/v1.UpdateUserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/v1.Response'
+      summary: Update user
+      tags:
+      - Users
+securityDefinitions:
+  BearerAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"
