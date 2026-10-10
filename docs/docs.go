@@ -1831,13 +1831,6 @@ const docTemplate = `{
             }
         }
     },
-    "securityDefinitions": {
-        "BearerAuth": {
-            "type": "apiKey",
-            "name": "Authorization",
-            "in": "header"
-        }
-    }
 }`
 
 // SwaggerInfo holds exported Swagger Info so clients can modify it
