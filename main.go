@@ -1,8 +1,6 @@
 // @title           Toko Emas API
 // @version         1.0
 // @description     API sistem manajemen toko emas dengan PostgreSQL backend.
-// @host            localhost:8000
-// @BasePath        /api/v1
 // @securityDefinitions.apikey BearerAuth
 // @in header
 // @name Authorization
